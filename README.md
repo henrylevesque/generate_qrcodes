@@ -1,27 +1,56 @@
-Generate QR codes (SVG + PNG)
+# generate_qrcodes
 
-This small tool generates QR codes from a dictionary of URLs. It uses `segno` to
-produce SVG and PNG output (Pillow is used by segno for PNG output).
+Small utility to generate SVG and PNG QR codes from a set of URLs.
 
-Quick start
+This repository contains a tiny Python script that uses segno to create
+vector (SVG) and raster (PNG) QR codes and writes them into the `qrcodes/`
+directory inside the project.
 
-1. Create a virtual environment and install dependencies:
+## Contents
+
+- `generate_qrcodes.py` — main script. Edit the `URLS` mapping to change which
+  QR codes are produced.
+- `requirements.txt` — runtime dependencies for the project.
+- `LICENSE` — license for this repository.
+- `qrcodes/` — output folder where SVG and PNG files are written.
+
+## Quickstart
+
+1. Create a virtual environment (recommended) and install dependencies:
 
 ```powershell
 python -m venv .venv; .\.venv\Scripts\Activate.ps1; pip install -r requirements.txt
 ```
 
-2. Edit `generate_qrcodes.py` to add or change URLs.
-3. Run:
+2. Edit `generate_qrcodes.py` and update the `URLS` dictionary with the keys
+   (used as filenames) and values (the target URLs).
+
+3. Run the script from the project root:
 
 ```powershell
 python generate_qrcodes.py
 ```
 
-Output files are written to the `qrcodes/` folder.
+4. Find generated files in the `qrcodes/` folder. Each entry produces both an
+   SVG and a PNG file.
 
-Running on GitHub
+## Configuration
 
-You can push this folder as its own repository. There's a GitHub Actions workflow
-that runs the script on push to `main` to validate it runs (doesn't push artifacts).
-For interactive running in the cloud, use GitHub Codespaces or a self-hosted runner.
+- `SCALE` — controls the size of the generated PNG files (pixel multiplier).
+- `BORDER` — quiet zone for the QR code (number of modules).
+
+Open `generate_qrcodes.py` for more details and to adjust parameters.
+
+## Dependencies
+
+Dependencies are listed in `requirements.txt`. The script uses:
+
+- segno — QR code generator (pure Python)
+- Pillow — used by segno to write PNG files
+
+Install them with `pip install -r requirements.txt` (see Quickstart above).
+
+## License
+
+This project is covered by the terms in the `LICENSE` file in this repository.
+See: `LICENSE`.
