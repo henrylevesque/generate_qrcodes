@@ -14,7 +14,7 @@ OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 URLS = {
     # Copy or edit entries here. Keys are used as filenames (avoid special chars).
-    "arts-in-arts-education": "https://daap.uc.edu/academic-programs/school-of-art/master-of-arts-in-education.html",
+    "github profile": "https://github.com/henrylevesque/",
 }
 
 # Visual parameters

@@ -19,7 +19,10 @@ directory inside the project.
 1. Create a virtual environment (recommended) and install dependencies:
 
 ```powershell
-python -m venv .venv; .\.venv\Scripts\Activate.ps1; pip install -r requirements.txt
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+pip install -r requirements.txt
 ```
 
 2. Edit `generate_qrcodes.py` and update the `URLS` dictionary with the keys
