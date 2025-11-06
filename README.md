@@ -19,7 +19,6 @@ directory inside the project.
 1. Create a virtual environment (recommended) and install dependencies:
 
 ```powershell
-python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
 pip install -r requirements.txt
@@ -34,7 +33,13 @@ pip install -r requirements.txt
 python generate_qrcodes.py
 ```
 
-4. Find generated files in the `qrcodes/` folder. Each entry produces both an
+4. Deactivate venv
+
+ ```powershell
+deactivate
+```
+
+5. Find generated files in the `qrcodes/` folder. Each entry produces both an
    SVG and a PNG file.
 
 ## Configuration
